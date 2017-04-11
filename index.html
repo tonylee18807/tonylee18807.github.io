@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Hank Quinlan, Horrible Cop</title>
+		<title>Recursion</title>
 		<link rel="stylesheet" type="text/css" href="main.css">
 	</head>
 	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
 		<div class="container">
     		<div class="blurb">
-        		<h1>Hi there, I'm Hank Quinlan!</h1>
-				<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
+        		<h1>Recursion</h1>
+				<p>Recursion is the process of using a certain procedure over and over again. It is often used in Computer Science to make code look clean and seem simpler by having a method call itself. When trying to figure out whether or not you should use recursion in a specific instance, ask yourself if recursion would make your code more concise. Often, recursion is used to perform a specific task that is supposed to happen multiple times; the point of this is so that the coder does not need to repeat all the code in their method once (or perhaps many times) again. Let’s look at an example from CodingBat, Recursion 1 called factorial. In this example, we are trying to calculate the factorial of a number. Recursion is often used in accordance with return statements since you can use recursion until you get a specific value you want returned; this can be seen in this factorial example. The approach to this problem should be to return the number one if the argument of the method ends one. If not, you should return that number multiplied by the factorial of that number -1. Below is my code:
+public int factorial(int n)
+{
+  if (n == 1) return 1;
+  else return n * factorial(n - 1);
+}
+Here, we see the use of recursion by calling the factorial method in the else statement. Until the argument, n, equals one, we are going to use recursion to calculate the factorial and eventually get n to equal one by calling the factorial of (n-1).
+However, there are some negatives to using recursion. First, recursion can make code harder to debug since all the physical code is not presented to the coder. Next, recursion takes up stack space for each time called. Even looking at the example above, while the factorial of a small number may be ok, if the factorial of 5,000 was called, this would take up 5,000 stack frames. Therefore, the recursive factorial method I showed above was just an example of how recursion can be used, but it may be better to use iteration for a factorial method if the method will be taking large numbers as its argument. Iteration requires only one stack frame but could also require the use of loops, which would affect the method’s big-Oh notation, as well as not looking as clean as a recursive solution. Take into account all these differences when trying to pick between using a recursive solution and an iterative solution.
+There are many ways recursion can be applied to the real world. First, imagine you need to sort a massive array of values. Java’s sorting methods can be implemented using recursion to make code much simpler and cleaner, such as mergesort. If you didn’t use recursion, your code would look more complicated and perhaps much harder to understand for those who didn’t write it. As well, imagine you are a secretary and need to search through a huge directory or database for certain names of employees. A recursive searching method, or methods, could be used to quickly find what you are looking for.
+There is also recursion in math and in the environment. The structures of trees are recursive, as well as the structures of other plants in nature. Similarly, a data tree in Computer Science is a recursive data type since it calls itself. Our body also has recursion with its processes, such as the way our blood vessels are structured and work. Blood flows through your blood vessels, which then divide into smaller vessels until there are only tiny capillaries left.
+Many of Java’s sorting methods use recursion, and for user-defined methods, it is up to the coder whether to use recursion or iteration. When looking at the big-Oh notation of a recursive method, devise a formula that counts how many times a certain operation happens with the recursive. Generally for factorial functions, for example, a recursive algorithm and an iterative algorithm will have the same time complexity. Additionally, this is the same for sorting algorithms. If we look at insertion sort, the recursive solution and iterative solution both have a big-Oh notation of O(n2).</p>
     		</div><!-- /.blurb -->
 		</div><!-- /.container -->
 		<footer>
